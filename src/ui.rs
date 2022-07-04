@@ -9,22 +9,23 @@ pub fn print_progress(
     elapsed: Duration,
 ) -> io::Result<()> {
     // Go to start of first line
-    write!(screen, "{}", cursor::Goto(1, 1)).unwrap();
+    write!(screen, "{}", cursor::Goto(1, 1))?;
     // Clear first line
-    write!(screen, "{}", clear::CurrentLine).unwrap();
+    write!(screen, "{}", clear::CurrentLine)?;
     // Print elapsed time
-    write!(screen, "Time elapsed: {:.0?}", duration - elapsed).unwrap();
+    write!(screen, "Time elapsed: {:.0?}", duration - elapsed)?;
     // Go to position of printing time left and print time left
-    write!(screen, "{}", cursor::Goto(1, 2)).unwrap();
-    write!(screen, "Time remaining: {:.0?}", elapsed).unwrap();
+    write!(screen, "{}", cursor::Goto(1, 2))?;
+    write!(screen, "{}", clear::CurrentLine)?;
+    write!(screen, "Time remaining: {:.0?}", elapsed)?;
 
     // Only print to bar, if a percent of progress has been made
     if i % 10 == 0 {
-        write!(screen, "{}", cursor::Goto(1 + i / 10, 3)).unwrap();
-        write!(screen, "#").unwrap();
+        write!(screen, "{}", cursor::Goto(1 + i / 10, 3))?;
+        write!(screen, "#")?;
     }
 
-    screen.flush().unwrap();
+    screen.flush()?;
 
     Ok(())
 }
