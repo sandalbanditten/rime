@@ -1,7 +1,11 @@
 [package]
-name = "rime"
+name = "trime"
 version = "0.1.0"
 edition = "2021"
+authors = ["Tobias <sandalbanditten@tutanota.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/sandalbanditten/rime"
 description = """
 A simple timing program for the terminal.
 """
