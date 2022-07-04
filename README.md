@@ -4,7 +4,7 @@ A simple timing program for the terminal, reminiscent of sleep(1).
 
 ## Version
 
-This is version 0.1.0
+This is version 0.1.1
 
 ## Usage
 
