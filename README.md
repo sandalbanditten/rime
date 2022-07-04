@@ -1,4 +1,4 @@
-# trime-get
+# trime
 
 A simple timing program for the terminal, reminiscent of sleep(1).
 
